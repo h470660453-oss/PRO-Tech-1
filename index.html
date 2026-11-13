@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PRO.Tech | اختبارات لغة JavaScript</title>
+  <script>try{document.documentElement.setAttribute("data-theme",localStorage.getItem("protech-theme")==="light"?"light":"dark")}catch(e){}</script>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="الصفحة الرئيسية">
+      <span class="brand-mark">JS</span>
+      <span class="brand-name">PRO.Tech</span>
+    </a>
+    <button id="themeToggle" class="btn theme-btn" type="button"></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>اختبارات لغة JavaScript</h1>
+      <p>ثلاثة اختبارات متدرجة في الصعوبة، تقيس فهمك لحلقات for والجمل الشرطية والمعاملات المنطقية. اختر الاختبار المناسب وابدأ.</p>
+    </section>
+
+    <section class="cards" aria-label="الاختبارات">
+      <article class="card card-easy">
+        <h2>الاختبار الأول</h2>
+        <span class="badge">المستوى: سهل</span>
+        <p class="card-desc">حلقات for بسيطة، وشروط مباشرة، ومعاملات المقارنة الأساسية.</p>
+        <dl class="meta">
+          <div><dt>عدد الأسئلة</dt><dd>20 سؤالًا</dd></div>
+          <div><dt>المدة</dt><dd>40 دقيقة</dd></div>
+        </dl>
+        <a class="btn btn-primary" href="level.1.html">البدء في الاختبار</a>
+      </article>
+
+      <article class="card card-medium">
+        <h2>الاختبار الثاني</h2>
+        <span class="badge">المستوى: متوسط</span>
+        <p class="card-desc">حلقات for مع else if، ودمج المعاملات المنطقية في شرط واحد.</p>
+        <dl class="meta">
+          <div><dt>عدد الأسئلة</dt><dd>20 سؤالًا</dd></div>
+          <div><dt>المدة</dt><dd>40 دقيقة</dd></div>
+        </dl>
+        <a class="btn btn-primary" href="level.2.html">البدء في الاختبار</a>
+      </article>
+
+      <article class="card card-hard">
+        <h2>الاختبار الثالث</h2>
+        <span class="badge">المستوى: متقدم</span>
+        <p class="card-desc">أولوية المعاملات المنطقية، وتقييم الشرط المختصر، ومقارنات تحتاج إلى دقة.</p>
+        <dl class="meta">
+          <div><dt>عدد الأسئلة</dt><dd>20 سؤالًا</dd></div>
+          <div><dt>المدة</dt><dd>40 دقيقة</dd></div>
+        </dl>
+        <a class="btn btn-primary" href="level.3.html">البدء في الاختبار</a>
+      </article>
+    </section>
+
+    <section class="rules">
+      <div class="panel">
+        <h2>تعليمات الاختبار</h2>
+        <ul>
+          <li>اكتب اسمك الأول قبل البدء، ولا يبدأ العدّاد إلا بعد الضغط على زر الدخول.</li>
+          <li>في كل سؤال كود، والمطلوب معرفة ناتج تشغيله ثم اختيار الإجابة الصحيحة.</li>
+          <li>يمكنك التنقل بين الأسئلة وتغيير إجاباتك قبل التسليم.</li>
+          <li>عند انتهاء الـ 40 دقيقة يُسلَّم الاختبار تلقائيًا وتظهر النتيجة.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">منصة PRO.Tech لاختبارات JavaScript</footer>
+
+  <script src="index.js"></script>
+</body>
+</html>

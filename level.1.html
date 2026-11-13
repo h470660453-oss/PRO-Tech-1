@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PRO.Tech | الاختبار الأول</title>
+  <script>try{document.documentElement.setAttribute("data-theme",localStorage.getItem("protech-theme")==="light"?"light":"dark")}catch(e){}</script>
+  <link rel="stylesheet" href="level.1.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="الصفحة الرئيسية">
+      <span class="brand-mark">JS</span>
+      <span class="brand-name">PRO.Tech</span>
+    </a>
+    <button id="themeToggle" class="btn theme-btn" type="button"></button>
+  </header>
+
+  <main>
+    <section id="startScreen" class="container">
+      <div class="panel start">
+        <h1>الاختبار الأول</h1>
+        <p><span class="badge">المستوى: سهل</span></p>
+        <ul class="facts">
+          <li>عدد الأسئلة: 20 سؤالًا من نوع اختيار من متعدد.</li>
+          <li>في كل سؤال كود، والمطلوب معرفة ناتج تشغيله.</li>
+          <li>مدة الاختبار 40 دقيقة، ويبدأ العدّاد بعد الضغط على زر الدخول.</li>
+          <li>يُسلَّم الاختبار تلقائيًا عند انتهاء الوقت.</li>
+        </ul>
+        <label class="field-label" for="nameInput">ما اسمك الأول؟</label>
+        <input id="nameInput" class="text-input" type="text" maxlength="20" autocomplete="given-name">
+        <p id="nameError" class="error" role="alert" hidden>يرجى كتابة اسمك الأول قبل الدخول.</p>
+        <button id="enterBtn" class="btn btn-primary" type="button">دخول</button>
+      </div>
+    </section>
+
+    <section id="quizScreen" hidden>
+      <div class="quizbar">
+        <div class="qinfo">
+          <strong id="qCounter"></strong>
+          <span id="answeredCount" class="muted"></span>
+        </div>
+        <div id="timer" class="timer" role="timer">40:00</div>
+      </div>
+      <div class="container layout">
+        <article class="panel">
+          <h2 class="qtitle">ما ناتج الكود الآتي؟</h2>
+          <pre id="code" class="code" dir="ltr"></pre>
+          <div id="options" role="group" aria-label="الاختيارات"></div>
+          <div class="qnav">
+            <button id="prevBtn" class="btn" type="button">السابق</button>
+            <button id="nextBtn" class="btn" type="button">التالي</button>
+            <button id="submitBtn" class="btn btn-primary" type="button">تسليم الاختبار</button>
+          </div>
+        </article>
+        <aside class="panel">
+          <h3>قائمة الأسئلة</h3>
+          <div id="qgrid" class="qgrid"></div>
+          <p class="legend">اللون الأصفر هو السؤال الحالي، والإطار الواضح يعني أنه تمت الإجابة عنه.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="resultScreen" class="container" hidden>
+      <div class="panel result">
+        <p id="autoNote" class="note" hidden>انتهى الوقت وتم تسليم الاختبار تلقائيًا.</p>
+        <h1 id="resultGreeting"></h1>
+        <div class="stats">
+          <div class="stat"><span>النسبة المئوية</span><strong id="resultPercent"></strong></div>
+          <div class="stat"><span>وهذا مستوى</span><strong id="resultLevel"></strong></div>
+        </div>
+        <div class="actions">
+          <button id="retryBtn" class="btn btn-primary" type="button">إعادة الاختبار</button>
+          <a class="btn" href="index.html">العودة إلى الرئيسية</a>
+        </div>
+      </div>
+      <h2 id="wrongTitle" class="wrong-title"></h2>
+      <div id="wrongList"></div>
+    </section>
+  </main>
+
+  <footer class="footer">منصة PRO.Tech لاختبارات JavaScript</footer>
+
+  <dialog id="confirmDialog" aria-labelledby="dlgTitle">
+    <h2 id="dlgTitle">تسليم الاختبار</h2>
+    <p id="dlgText"></p>
+    <div class="dlg-actions">
+      <button id="dlgConfirm" class="btn btn-primary" type="button">تسليم</button>
+      <button id="dlgCancel" class="btn" type="button">العودة إلى الاختبار</button>
+    </div>
+  </dialog>
+
+  <script src="level.1.js"></script>
+</body>
+</html>

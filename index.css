@@ -1,0 +1,175 @@
+/* PRO.Tech — الأنماط الأساسية */
+:root, [data-theme="dark"] {
+  --bg: #222222;
+  --surface: #2b2b2b;
+  --surface-2: #353535;
+  --border: #474747;
+  --text: #f2f2f2;
+  --muted: #bdbdbd;
+  --accent: #F7DF1E;
+  --on-accent: #222222;
+  --focus: #F7DF1E;
+  --danger: #ff8a80;
+}
+[data-theme="light"] {
+  --bg: #ffffff;
+  --surface: #f5f5f5;
+  --surface-2: #ebebeb;
+  --border: #d2d2d2;
+  --text: #222222;
+  --muted: #565656;
+  --accent: #F7DF1E;
+  --on-accent: #222222;
+  --focus: #222222;
+  --danger: #c62828;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Tahoma, "Noto Sans Arabic", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+}
+h1, h2, h3 { line-height: 1.4; margin: 0 0 12px; }
+p { margin: 0 0 12px; }
+a { color: inherit; }
+
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+/* الشريط العلوي */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 20px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.brand-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  background: var(--accent);
+  color: var(--on-accent);
+  border-radius: 4px;
+  font: 700 1rem/1 Consolas, "Courier New", monospace;
+}
+.brand-name { direction: ltr; }
+
+/* الأزرار */
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover { border-color: var(--text); }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn:disabled:hover { border-color: var(--border); }
+.btn-primary {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: #b9a400;
+}
+.btn-primary:hover { border-color: var(--on-accent); }
+.theme-btn { padding: 8px 16px; font-size: 0.95rem; }
+
+.container { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px; }
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+}
+.muted { color: var(--muted); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 14px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  background: var(--lvl, var(--accent));
+  color: var(--lvl-text, var(--on-accent));
+}
+
+.footer {
+  padding: 20px 16px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+
+/* صفحة الهبوط */
+:root {
+  --easy: #2F8F4A;
+  --medium: #F7DF1E;
+  --hard: #D93A3A;
+}
+.hero { max-width: 980px; margin: 0 auto; padding: 40px 16px 8px; }
+.hero h1 { font-size: 2.1rem; margin-bottom: 8px; }
+.hero p { color: var(--muted); max-width: 62ch; }
+
+.cards {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--lvl);
+  border-radius: 10px;
+  padding: 22px;
+}
+.card h2 { font-size: 1.45rem; margin-bottom: 10px; }
+.card .badge { align-self: flex-start; margin-bottom: 14px; }
+.card-desc { color: var(--muted); flex: 1; }
+.meta { display: flex; gap: 24px; margin: 8px 0 20px; }
+.meta div { display: flex; flex-direction: column; }
+.meta dt { font-size: 0.85rem; color: var(--muted); }
+.meta dd { margin: 0; font-weight: 700; }
+.card-easy { --lvl: var(--easy); --lvl-text: #ffffff; }
+.card-medium { --lvl: var(--medium); --lvl-text: #222222; }
+.card-hard { --lvl: var(--hard); --lvl-text: #ffffff; }
+.card .btn { width: 100%; }
+
+.rules { max-width: 980px; margin: 0 auto; padding: 8px 16px 40px; }
+.rules .panel { padding: 20px 24px; }
+.rules h2 { font-size: 1.2rem; }
+.rules ul { margin: 0; padding-inline-start: 22px; }
+.rules li { margin-bottom: 4px; }
+
+@media (max-width: 860px) {
+  .cards { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 1.7rem; }
+}
